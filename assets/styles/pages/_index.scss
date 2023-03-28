@@ -436,3 +436,61 @@
     }
   }
 }
+
+.form-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+
+  &__wrapper {
+    background-color: #f7f7f7;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    &__text {
+      margin-bottom: 1rem;
+    }
+
+    &__input {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: 100%;
+
+      input,
+      textarea {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid var(--theme-text-color);
+        height: 60px;
+        padding: 10px;
+      }
+
+      textarea {
+        resize: vertical;
+        max-height: 300px;
+        height: 150px;
+      }
+    }
+
+    &__button {
+      width: 100%;
+      background-color: var(--theme-primary-color);
+      color: white;
+      border-radius: 8px;
+      height: 60px;
+      border: 0;
+      cursor: pointer;
+      @include transition;
+
+      &:hover {
+        opacity: 0.7;
+        @include transition;
+      }
+    }
+  }
+}
