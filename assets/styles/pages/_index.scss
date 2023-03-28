@@ -256,3 +256,51 @@
     }
   }
 }
+
+.portfolio-section {
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      &:nth-child(even) {
+        position: relative;
+        top: 2rem;
+      }
+
+      &__image {
+        cursor: pointer;
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+
+      &__tags {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 1rem;
+
+        &__item {
+          color: #5e94ff;
+          border: 1px solid #5e94ff;
+          border-radius: 5px;
+          padding: 5px;
+          font-size: clamp(0.75rem, 0.2813rem + 1.5vw, 1.125rem);
+        }
+      }
+
+      &__content {
+        &__title {
+          font-size: clamp(1.5rem, 0.5625rem + 3vw, 2.25rem);
+        }
+      }
+    }
+  }
+}
