@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NETDEV</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.2.96/css/materialdesignicons.min.css"
+      integrity="sha512-LX0YV/MWBEn2dwXCYgQHrpa9HJkwB+S+bnBpifSOTO1No27TqNMKYoAn6ff2FBh03THAzAiiCwQ+aPX+/Qt/Ow=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.4/css/splide-core.min.css"
+      integrity="sha512-cSogJ0h5p3lhb//GYQRKsQAiwRku2tKOw/Rgvba47vg0+iOFrQ94iQbmAvRPF5+qkF8+gT7XBct233jFg1cBaQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+  </head>
+  <body>
+    <header class="header__wrapper">
+      <div class="container">
+        <div class="header">
+          <a href="/">
+            <div class="header__logo">
+              <img src="./assets/images/logo.svg" alt="" />
+            </div>
+          </a>
+
+          <nav class="header__nav__wrapper">
+            <ul class="header__nav">
+              <li class="header__nav__item">
+                <a href="#">Главная</a>
+              </li>
+
+              <li class="header__nav__item">
+                <a href="#">Услуги</a>
+              </li>
+
+              <li class="header__nav__item">
+                <a href="#">Клиенты</a>
+              </li>
+
+              <li class="header__nav__item">
+                <a href="#">Отзывы</a>
+              </li>
+
+              <li class="header__nav__item">
+                <a href="#">Стоимость</a>
+              </li>
+
+              <li class="header__nav__item">
+                <a href="#">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="header__panel">
+            <button class="header__button">
+              <span>Оставить заявку</span>
+
+              <i class="mdi mdi-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="landing-section__wrapper">
+        <div class="container">
+          <div class="landing-section">
+            <div class="landing-section__image">
+              <img src="./assets/images/landing-image.png" alt="" />
+            </div>
+
+            <div class="landing-section__content">
+              <h1 class="landing-section__title">
+                Воплотите свое видение в жизнь с netdev
+              </h1>
+
+              <p class="landing-section__text">
+                Мы специализируемся на создании решений с чистым кодом, которые
+                воплощают ваше видение в жизнь. Имея 10 опытных разработчиков и
+                5 лет опыта работы на рынке, вы можете быть уверены, что ваш
+                проект в надежных руках.
+              </p>
+
+              <section class="splide" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide landing-section__slider__item">
+                      <h2 class="landing-section__slider__item__title">
+                        Веб-порталы, сайты и дизайн любой сложности
+                      </h2>
+
+                      <p class="landing-section__slider__item__text">
+                        Ваш бизнес станет сильнее 1 год технической поддержки
+                      </p>
+                    </li>
+
+                    <li class="splide__slide landing-section__slider__item">
+                      <h2 class="landing-section__slider__item__title">
+                        Веб-порталы, сайты и дизайн любой сложности
+                      </h2>
+
+                      <p class="landing-section__slider__item__text">
+                        Ваш бизнес станет сильнее 1 год технической поддержки
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="splide__arrows landing-section__slider__arrows">
+                  <button
+                    class="splide__arrow splide__arrow--prev landing-section__slider__arrow landing-section__slider__arrow--prev"
+                  >
+                    <i class="mdi mdi-chevron-left"></i>
+                  </button>
+
+                  <div class="landing-section__slider__pagination">
+                    <span class="current"></span>
+                    <span>/</span>
+                    <span class="total">2</span>
+                  </div>
+
+                  <button
+                    class="splide__arrow splide__arrow--next landing-section__slider__arrow landing-section__slider__arrow--next"
+                  >
+                    <i class="mdi mdi-chevron-right"></i>
+                  </button>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
+      integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function handlePagination(index) {
+        const current = document.querySelector(
+          ".landing-section__slider__pagination .current"
+        );
+
+        current.textContent = index + 1;
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const splide = new Splide(".splide", {
+          arrows: {
+            prev: document.querySelector(".splide__arrow--prev"),
+            next: document.querySelector(".splide__arrow--next"),
+          },
+          gap: 10,
+          pagination: {},
+        });
+
+        splide.on("pagination:mounted", () => {
+          handlePagination(0);
+        });
+
+        splide.on("move", (index) => {
+          handlePagination(index);
+        });
+        splide.mount();
+      });
+    </script>
+  </body>
+</html>
