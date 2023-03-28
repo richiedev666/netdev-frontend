@@ -378,3 +378,61 @@
     }
   }
 }
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    &__title {
+      font-size: clamp(3.125rem, 2.0313rem + 3.5vw, 4rem);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+
+      a {
+        text-decoration: underline;
+        text-transform: none;
+        @include transition;
+
+        &:hover {
+          opacity: 0.7;
+          @include transition;
+        }
+      }
+    }
+
+    &__text {
+      font-size: clamp(1rem, 0.375rem + 2vw, 1.5rem);
+      width: 60%;
+    }
+
+    &__block {
+      &.right {
+        text-align: right;
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+
+    &__item {
+      font-size: clamp(2.25rem, 1.4688rem + 2.5vw, 2.875rem);
+      cursor: pointer;
+      @include transition;
+
+      &:hover {
+        opacity: 0.7;
+        @include transition;
+      }
+    }
+  }
+}
