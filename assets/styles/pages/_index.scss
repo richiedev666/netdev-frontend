@@ -1,6 +1,23 @@
+.section {
+  &__wrapper {
+    padding: 100px 0;
+  }
+  &__title {
+    font-size: clamp(3.25rem, 2.3125rem + 3vw, 4rem);
+    margin-bottom: 1rem;
+
+    span {
+      color: var(--theme-primary-color);
+    }
+  }
+
+  &__text {
+    font-size: clamp(0.875rem, 0.4063rem + 1.5vw, 1.25rem);
+  }
+}
+
 .landing-section {
   &__wrapper {
-    height: 900px;
     background-color: #f7f7f7;
     padding: 20px 0;
   }
@@ -83,6 +100,103 @@
       .current {
         color: var(--theme-primary-color);
         font-weight: bold;
+      }
+    }
+  }
+}
+
+.services-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  &__button {
+    width: 210px;
+    height: 210px;
+    background-color: var(--theme-primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: 3rem;
+    @include transition;
+
+    &:hover {
+      opacity: 0.7;
+      @include transition;
+    }
+  }
+
+  &__list {
+    &__item {
+      padding: 24px 0;
+      border-bottom: 2px solid #dbdcdb;
+
+      &__title {
+        font-size: clamp(1.125rem, 0.6563rem + 1.5vw, 1.5rem);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        @include transition;
+
+        &__icon {
+          transform: rotate(45deg);
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include transition;
+        }
+      }
+
+      &__content {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.6s ease-in-out;
+
+        padding-top: 1rem;
+        font-size: clamp(0.75rem, 0.2813rem + 1.5vw, 1.125rem);
+
+        ul {
+          li {
+            padding-left: 1rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            line-height: 1.2;
+            margin-bottom: 10px;
+
+            &::before {
+              content: "";
+              width: 4px;
+              height: 4px;
+              background-color: var(--theme-text-color);
+              display: block;
+              position: absolute;
+              left: 0;
+            }
+          }
+        }
+      }
+
+      &.is-active {
+        .services-section__list__item {
+          &__title {
+            color: var(--theme-primary-color);
+            @include transition;
+
+            &__icon {
+              transform: rotate(-45deg);
+              @include transition;
+            }
+          }
+          &__content {
+            max-height: 300px;
+            transition: max-height 0.6s ease-in-out;
+          }
+        }
       }
     }
   }
