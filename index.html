@@ -92,7 +92,10 @@
                 проект в надежных руках.
               </p>
 
-              <section class="splide" aria-label="Splide Basic HTML Example">
+              <section
+                class="splide landing-section__slider"
+                aria-label="Splide Basic HTML Example"
+              >
                 <div class="splide__track">
                   <ul class="splide__list">
                     <li class="splide__slide landing-section__slider__item">
@@ -479,6 +482,86 @@
           </div>
         </div>
       </section>
+
+      <div class="section__wrapper talk-section__wrapper">
+        <div class="container">
+          <h1 class="section__title talk-section__title">о нас говорят</h1>
+
+          <div class="section talk-section">
+            <div class="talk-section__sponsor-image">
+              <img src="./assets/images/talk/sponsor.png" alt="" />
+            </div>
+
+            <div class="talk-section__content">
+              <p class="talk-section__content__text--small">
+                Risus, consequat cursus accumsan id leo nunc.
+              </p>
+
+              <p class="talk-section__content__text--small">
+                A et scelerisque sed gravida netus ultrices elementum.
+              </p>
+
+              <p class="talk-section__content__text">
+                Risus, consequat cursus accumsan id leo nunc. A et scelerisque
+                sed gravida netus ultrices elementum. Risus, consequat cursus
+                accumsan id leo nunc. A et scelerisque sed gravida netus
+                ultrices elementum.Risus, consequat cursus accumsan id leo nunc.
+                A et scelerisque sed gravida netus ultrices elementum.
+              </p>
+
+              <div class="talk-section__content__socials">
+                <div class="talk-section__content__socials__item">
+                  <a
+                    href="#"
+                    class="talk-section__content__socials__item__icon"
+                  >
+                    <i class="mdi mdi-facebook"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="talk-section__slider__wrapper">
+              <section
+                class="splide talk-section__slider"
+                aria-label="Splide Basic HTML Example"
+              >
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide talk-section__slider__item">
+                      <img src="./assets/images/talk/document.png" alt="" />
+                    </li>
+
+                    <li class="splide__slide talk-section__slider__item">
+                      <img src="./assets/images/talk/document.png" alt="" />
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="splide__arrows talk-section__slider__arrows">
+                  <button
+                    class="splide__arrow splide__arrow--prev talk-section__slider__arrow talk-section__slider__arrow--prev"
+                  >
+                    <i class="mdi mdi-chevron-left"></i>
+                  </button>
+
+                  <div class="talk-section__slider__pagination">
+                    <span class="current"></span>
+                    <span>/</span>
+                    <span class="total">2</span>
+                  </div>
+
+                  <button
+                    class="splide__arrow splide__arrow--next talk-section__slider__arrow talk-section__slider__arrow--next"
+                  >
+                    <i class="mdi mdi-chevron-right"></i>
+                  </button>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <script
@@ -488,26 +571,26 @@
     ></script>
 
     <script>
-      function handlePagination(index) {
-        const current = document.querySelector(
-          ".landing-section__slider__pagination .current"
-        );
+      function initLandingSlider() {
+        function handlePagination(index) {
+          const current = document.querySelector(
+            ".landing-section__slider__pagination .current"
+          );
 
-        current.textContent = index + 1;
-      }
+          current.textContent = index + 1;
+        }
 
-      function initSlider() {
         document.addEventListener("DOMContentLoaded", function () {
-          const splide = new Splide(".splide", {
+          const splide = new Splide(".landing-section__slider", {
             arrows: {
               prev: document.querySelector(".splide__arrow--prev"),
               next: document.querySelector(".splide__arrow--next"),
             },
             gap: 10,
-            pagination: {},
+            pagination: false,
           });
 
-          splide.on("pagination:mounted", () => {
+          splide.on("mounted", () => {
             handlePagination(0);
           });
 
@@ -531,8 +614,39 @@
         }
       }
 
-      initSlider();
+      function initTalkSlider() {
+        function handlePagination(index) {
+          const current = document.querySelector(
+            ".talk-section__slider__pagination .current"
+          );
+
+          current.textContent = index + 1;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+          const splide = new Splide(".talk-section__slider", {
+            arrows: {
+              prev: document.querySelector(".splide__arrow--prev"),
+              next: document.querySelector(".splide__arrow--next"),
+            },
+            gap: 10,
+            pagination: false,
+          });
+
+          splide.on("mounted", () => {
+            handlePagination(0);
+          });
+
+          splide.on("move", (index) => {
+            handlePagination(index);
+          });
+          splide.mount();
+        });
+      }
+
+      initLandingSlider();
       initAccordion();
+      initTalkSlider();
     </script>
   </body>
 </html>
