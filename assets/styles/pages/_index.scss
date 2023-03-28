@@ -155,9 +155,8 @@
       &__content {
         overflow: hidden;
         max-height: 0;
-        transition: max-height 0.6s ease-in-out;
-
-        padding-top: 1rem;
+        transition: all 0.6s ease-in-out;
+        padding-top: 0;
         font-size: clamp(0.75rem, 0.2813rem + 1.5vw, 1.125rem);
 
         ul {
@@ -194,8 +193,9 @@
             }
           }
           &__content {
+            padding-top: 1rem;
             max-height: 300px;
-            transition: max-height 0.6s ease-in-out;
+            transition: all 0.6s ease-in-out;
           }
         }
       }

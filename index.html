@@ -426,13 +426,13 @@
 
       function initAccordion() {
         const accordionItems = document.querySelectorAll(
-          ".services-section__list__item"
+          ".services-section__list__item__title"
         );
 
         for (const item of accordionItems) {
           item.addEventListener("click", function (event) {
             event.preventDefault();
-            item.classList.toggle("is-active");
+            item.parentElement.classList.toggle("is-active");
           });
         }
       }
