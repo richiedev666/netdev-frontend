@@ -411,6 +411,11 @@ body select {
 .services-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+}
+.services-section__content {
+  position: sticky;
+  top: 100px;
 }
 .services-section__button {
   width: 210px;

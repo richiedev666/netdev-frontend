@@ -107,6 +107,12 @@
 .services-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+
+  &__content {
+    position: sticky;
+    top: 100px;
+  }
 
   &__button {
     width: 210px;
