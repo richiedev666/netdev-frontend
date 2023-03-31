@@ -161,6 +161,11 @@ body {
 }
 body a {
   color: var(--theme-text-color);
+  transition: all 0.2s ease-in-out;
+}
+body a:hover {
+  color: var(--theme-primary-color);
+  transition: all 0.2s ease-in-out;
 }
 body button,
 body input,
@@ -169,6 +174,7 @@ body select {
   font-family: Bahnschrift, sans-serif;
   color: var(--theme-text-color);
   font-size: clamp(0.75rem, 0.4375rem + 1vw, 1rem);
+  outline-color: var(--theme-primary-color);
 }
 
 .container {
@@ -620,7 +626,7 @@ body select {
   transition: all 0.2s ease-in-out;
 }
 .contact-section__item__title a:hover {
-  opacity: 0.7;
+  color: var(--theme-primary-color);
   transition: all 0.2s ease-in-out;
 }
 .contact-section__item__text {
@@ -642,7 +648,7 @@ body select {
   transition: all 0.2s ease-in-out;
 }
 .contact-section__socials__item:hover {
-  opacity: 0.7;
+  color: var(--theme-primary-color);
   transition: all 0.2s ease-in-out;
 }
 

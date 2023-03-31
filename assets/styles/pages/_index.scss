@@ -400,7 +400,7 @@
         @include transition;
 
         &:hover {
-          opacity: 0.7;
+          color: var(--theme-primary-color);
           @include transition;
         }
       }
@@ -430,7 +430,7 @@
       @include transition;
 
       &:hover {
-        opacity: 0.7;
+        color: var(--theme-primary-color);
         @include transition;
       }
     }

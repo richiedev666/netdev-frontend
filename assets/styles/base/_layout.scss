@@ -14,6 +14,12 @@ body {
 
   a {
     color: var(--theme-text-color);
+    @include transition;
+
+    &:hover {
+      color: var(--theme-primary-color);
+      @include transition;
+    }
   }
 
   button,
@@ -23,6 +29,7 @@ body {
     font-family: Bahnschrift, sans-serif;
     color: var(--theme-text-color);
     font-size: clamp(0.75rem, 0.4375rem + 1vw, 1rem);
+    outline-color: var(--theme-primary-color);
   }
 }
 
