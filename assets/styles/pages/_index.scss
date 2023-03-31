@@ -111,7 +111,7 @@
 
   &__content {
     position: sticky;
-    top: 100px;
+    top: calc(var(--header-height) + 10px);
   }
 
   &__button {
@@ -471,10 +471,16 @@
 .form-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
   gap: 100px;
 
   &__wrapper {
     background-color: #f7f7f7;
+  }
+
+  &__content {
+    position: sticky;
+    top: calc(var(--header-height) + 10px);
   }
 
   &__form {

@@ -4,6 +4,7 @@
   --theme-primary-color: #0000fe;
   --theme-section-bg-color: #0000a4;
   --theme-text-color: #1d1f21;
+  --header-height: 90px;
 }
 
 /* BASE */
@@ -212,6 +213,9 @@ body select {
   top: 0;
   background-color: white;
   z-index: 9999;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
 }
 .header__logo {
   width: 100%;
@@ -415,7 +419,7 @@ body select {
 }
 .services-section__content {
   position: sticky;
-  top: 100px;
+  top: calc(var(--header-height) + 10px);
 }
 .services-section__button {
   width: 210px;
@@ -697,10 +701,15 @@ body select {
 .form-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
   gap: 100px;
 }
 .form-section__wrapper {
   background-color: #f7f7f7;
+}
+.form-section__content {
+  position: sticky;
+  top: calc(var(--header-height) + 10px);
 }
 .form-section__form {
   display: flex;
