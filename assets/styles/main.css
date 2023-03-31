@@ -1,8 +1,11 @@
 /* CONFIG */
 :root {
   --theme-primary-color: #0000fe;
+  --theme-section-bg-color: #0000a4;
   --theme-text-color: #1d1f21;
-} /* BASE */
+}
+
+/* BASE */
 @font-face {
   font-family: "Bahnschrift";
   src: url("../fonts/Bahnschrift/Bahnschrift.ttf");
@@ -358,7 +361,7 @@ body select {
 }
 .landing-section__slider__arrow, .talk-section__slider__arrow {
   color: white;
-  background-color: var(--theme-primary-color);
+  background-color: var(--theme-section-bg-color);
   width: 60px;
   height: 60px;
   display: flex;
@@ -394,7 +397,7 @@ body select {
 .services-section__button {
   width: 210px;
   height: 210px;
-  background-color: var(--theme-primary-color);
+  background-color: var(--theme-section-bg-color);
   color: white;
   display: flex;
   align-items: center;
@@ -472,7 +475,7 @@ body select {
   gap: 50px;
 }
 .transparency-section__wrapper {
-  background-color: var(--theme-primary-color);
+  background-color: var(--theme-section-bg-color);
   color: white;
 }
 .transparency-section__image {
@@ -556,8 +559,12 @@ body select {
   gap: 50px;
 }
 .talk-section__wrapper {
-  background-color: var(--theme-primary-color);
+  background-color: var(--theme-section-bg-color);
   color: white;
+}
+.talk-section__content__socials__item:hover a {
+  opacity: 0.6;
+  color: #fff;
 }
 .talk-section__slider {
   overflow: hidden;
@@ -571,7 +578,8 @@ body select {
   justify-content: center;
 }
 .talk-section__slider__arrows {
-  justify-content: center;
+  justify-content: flex-end;
+  padding-right: 3rem;
 }
 .talk-section__slider__arrow {
   background-color: white;
