@@ -1044,6 +1044,9 @@ body select {
 
 .portfolio-main__landing__wrapper {
   padding-top: var(--header-height);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 .portfolio-main__landing__content {
   display: flex;
@@ -1064,6 +1067,52 @@ body select {
   line-height: 31.68px;
   letter-spacing: 0.004em;
   font-weight: 300;
+}
+.portfolio-main__cases__title {
+  font-size: clamp(1.625rem, 0.8438rem + 2.5vw, 2.25rem);
+}
+.portfolio-main__cases__header {
+  margin-bottom: 115px;
+}
+.portfolio-main__cases__items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+}
+.portfolio-main__cases__item__title {
+  font-size: clamp(1.125rem, 0.6563rem + 1.5vw, 1.5rem);
+}
+.portfolio-main__cases__item__image {
+  height: 385px;
+  width: 100%;
+  position: relative;
+}
+.portfolio-main__cases__item__image img {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.portfolio-main__cases__item__image .arrow {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  color: var(--theme-primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.portfolio-main__cases__item__image .arrow:hover {
+  opacity: 0.7;
+  transition: all 0.2s ease-in-out;
 }
 
 /*# sourceMappingURL=main.css.map */
