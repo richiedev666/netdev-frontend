@@ -231,6 +231,8 @@ body select {
   width: max-content;
   padding: 0 20px;
   font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.17));
+  gap: 5px;
   transition: all 0.2s ease-in-out;
 }
 .button:hover {
@@ -1038,6 +1040,30 @@ body select {
 }
 .checkout-section__catalog__item__content__title {
   font-size: clamp(1.125rem, 0.6563rem + 1.5vw, 1.5rem);
+}
+
+.portfolio-main__landing__wrapper {
+  padding-top: var(--header-height);
+}
+.portfolio-main__landing__content {
+  display: flex;
+}
+.portfolio-main__landing__title {
+  font-size: clamp(2.75rem, 1.8906rem + 2.75vw, 3.4375rem);
+}
+.portfolio-main__landing__title span {
+  color: #727272;
+}
+.portfolio-main__landing__text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.portfolio-main__landing__text p {
+  font-size: clamp(1.125rem, 0.8125rem + 1vw, 1.375rem);
+  line-height: 31.68px;
+  letter-spacing: 0.004em;
+  font-weight: 300;
 }
 
 /*# sourceMappingURL=main.css.map */

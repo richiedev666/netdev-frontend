@@ -1,0 +1,30 @@
+.portfolio-main__landing {
+  &__wrapper {
+    padding-top: var(--header-height);
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__title {
+    font-size: clamp(2.75rem, 1.8906rem + 2.75vw, 3.4375rem);
+
+    span {
+      color: #727272;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    p {
+      font-size: clamp(1.125rem, 0.8125rem + 1vw, 1.375rem);
+      line-height: 31.68px;
+      letter-spacing: 0.004em;
+      font-weight: 300;
+    }
+  }
+}
