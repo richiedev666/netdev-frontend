@@ -869,6 +869,21 @@
         );
 
         for (const item of accordionItems) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  item.parentElement.classList.add("is-active");
+                }
+              });
+            },
+            {
+              rootMargin: "250px 0px -150px 0px",
+            }
+          );
+
+          observer.observe(item);
+
           item.addEventListener("click", function (event) {
             event.preventDefault();
             item.parentElement.classList.toggle("is-active");
