@@ -394,7 +394,6 @@ body select {
 }
 .section__title {
   font-size: clamp(3.25rem, 2.3125rem + 3vw, 4rem);
-  margin-bottom: 1rem;
   text-transform: uppercase;
 }
 .section__title span {
@@ -492,6 +491,9 @@ body select {
 .services-section__content {
   position: sticky;
   top: calc(var(--header-height) + 10px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .services-section__button {
   border: 0;
@@ -504,7 +506,7 @@ body select {
   justify-content: center;
   border-radius: 50%;
   cursor: pointer;
-  margin-top: 3rem;
+  margin-top: 10px;
   transition: all 0.2s ease-in-out;
 }
 .services-section__button:hover {
