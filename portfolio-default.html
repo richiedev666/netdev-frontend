@@ -14,10 +14,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <title>Portfolio default HTML</title>
   </head>
   <body>
-    <header class="header__wrapper is-transparent">
+    <header class="header__wrapper is-transparent" data-aos="fade-down">
       <div class="container">
         <div class="header">
           <a class="header__logo" href="/"> </a>
@@ -65,7 +66,11 @@
       <section class="section__wrapper main-section__wrapper">
         <div class="container">
           <div class="section main-section">
-            <h1 class="main-section__title">
+            <h1
+              class="main-section__title"
+              data-aos="fade-right"
+              data-aos-delay="500"
+            >
               Kazakhstan Petrochemical Industries Inc.
             </h1>
 
@@ -73,25 +78,41 @@
               <div class="main-section__timeline__line"></div>
 
               <div class="main-section__timeline">
-                <div class="main-section__timeline__item">
+                <div
+                  class="main-section__timeline__item"
+                  data-aos="fade-up"
+                  data-aos-delay="1000"
+                >
                   <span>ПРОЕКТ</span>
 
                   <p>01</p>
                 </div>
 
-                <div class="main-section__timeline__item">
+                <div
+                  class="main-section__timeline__item"
+                  data-aos="fade-up"
+                  data-aos-delay="1200"
+                >
                   <span>ВЫПОЛНЕНО</span>
 
                   <p>SEO, Redesign, Development</p>
                 </div>
 
-                <div class="main-section__timeline__item">
+                <div
+                  class="main-section__timeline__item"
+                  data-aos="fade-up"
+                  data-aos-delay="1400"
+                >
                   <span>СРОК ВЫПОЛНЕНИЯ</span>
 
                   <p>3 месяца</p>
                 </div>
 
-                <div class="main-section__timeline__item">
+                <div
+                  class="main-section__timeline__item"
+                  data-aos="fade-up"
+                  data-aos-delay="1600"
+                >
                   <span>ГОД</span>
 
                   <p>05/03/2023</p>
@@ -107,14 +128,14 @@
           <div class="section about-section">
             <div class="about-section__top">
               <div class="about-section__content">
-                <h2 class="about-section__title">
+                <h2 class="about-section__title" data-aos="fade-up">
                   Мы рады представить нашу работу для ТОО «Kazakhstan
                   Petrochemical Industries Inc. («Казахстан Петрокемикал
                   Индастриз Инк.») – оператора Проекта «Строительство первого
                   интегрированного газохимического комплекса в Казахстане».
                 </h2>
 
-                <div class="about-section__text">
+                <div class="about-section__text" data-aos="fade-up">
                   <div class="about-section__text__arrow"></div>
 
                   <ul class="list">
@@ -143,15 +164,15 @@
             </div>
 
             <div class="about-section__gallery">
-              <div class="about-section__gallery__item">
+              <div class="about-section__gallery__item" data-aos="fade-right">
                 <img src="assets/images/index/about-image.jpg" alt="" />
               </div>
 
-              <div class="about-section__gallery__item">
+              <div class="about-section__gallery__item" data-aos="fade-left">
                 <img src="assets/images/index/about-image.jpg" alt="" />
               </div>
 
-              <div class="about-section__gallery__item">
+              <div class="about-section__gallery__item" data-aos="fade-up">
                 <img src="assets/images/index/about-image.jpg" alt="" />
               </div>
             </div>
@@ -163,17 +184,17 @@
         <div class="container">
           <div class="section checkout-section">
             <div class="checkout-section__header">
-              <div>
+              <div data-aos="fade-right">
                 <button class="button">Другие проекты</button>
               </div>
 
-              <h2 class="checkout-section__title">
+              <h2 class="checkout-section__title" data-aos="fade-left">
                 CHECK OUT <span>SOME MORE</span>
               </h2>
             </div>
 
             <div class="checkout-section__catalog">
-              <div class="checkout-section__catalog__item">
+              <div class="checkout-section__catalog__item" data-aos="fade-up">
                 <div class="checkout-section__catalog__item__image">
                   <img
                     src="assets/images/portfolio-default/checkout-project-image.jpg"
@@ -191,7 +212,11 @@
                   </h3>
                 </div>
               </div>
-              <div class="checkout-section__catalog__item">
+              <div
+                class="checkout-section__catalog__item"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 <div class="checkout-section__catalog__item__image">
                   <img
                     src="assets/images/portfolio-default/checkout-project-image.jpg"
@@ -210,7 +235,11 @@
                 </div>
               </div>
 
-              <div class="checkout-section__catalog__item">
+              <div
+                class="checkout-section__catalog__item"
+                data-aos="fade-up"
+                data-aos-delay="600"
+              >
                 <div class="checkout-section__catalog__item__image">
                   <img
                     src="assets/images/portfolio-default/checkout-project-image.jpg"
@@ -378,7 +407,15 @@
       </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+      AOS.init({
+        debounceDelay: 150,
+        throttleDelay: 100,
+        offset: 150,
+        duration: 1000,
+      });
+
       const header = document.querySelector(".header__wrapper");
 
       window.addEventListener("scroll", function () {
